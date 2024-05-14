@@ -40,7 +40,7 @@ ol {
 .button {
   background-color: transparent;
   color: #fff;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -70,7 +70,6 @@ ol {
 }
 
 .more-button {
-  /* inline-size: 100%; */
   width: 399px;
 }
 
@@ -81,6 +80,7 @@ ol {
 .page {
   display: flex;
   align-items: center;
+  justify-content: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -139,6 +139,7 @@ ol {
   align-items: center;
   gap: 5px;
   width: fit-content;
+  cursor: pointer;
 }
 
 .search-form__label-text {
@@ -147,13 +148,13 @@ ol {
   line-height: 21.6px;
 }
 
-.search-form__label:hover {
-  text-decoration: underline 1px #fff;
-  text-underline-offset: 4px;
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 1px solid #fff;
+  outline: 1px solid #FFF;
+  outline-offset: 2px;
 }
 
 .search-form__textfield {
@@ -163,8 +164,8 @@ ol {
   font-size: inherit;
   line-height: 21.6px;
   font-family: inherit;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
   border-left: none;
   border-right: none;
   inline-size: 225px;
@@ -193,10 +194,6 @@ ol {
   margin: 1px 0 0 1px;
 }
 
-.search-form__checkbox-list:has(:focus-visible) {
-  outline: 1px solid #fff;
-}
-
 .content__details {
   block-size: 100%;
   inline-size: 100%;
@@ -208,7 +205,7 @@ ol {
   font-size: 75px;
   line-height: 70.5px;
   text-transform: uppercase;
-  margin-bottom: 22px;
+  padding-bottom: 22px;
 }
 
 .content__accent {
@@ -216,13 +213,13 @@ ol {
 }
 
 .content__list {
-  /* scrollbar-width: none; */
   block-size: 298px;
   overflow: auto;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .content__card-link {
@@ -258,10 +255,6 @@ ol {
   justify-content: space-between;
 }
 
-.content__video-card-description-container {
-  flex-grow: 1;
-}
-
 .content__video-card-title {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
@@ -269,6 +262,10 @@ ol {
   font-weight: 700;
   line-height: 30px;
   margin-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 190px;
 }
 
 .content__video-card-description {
