@@ -229,10 +229,6 @@ ol {
   margin: 2px;
 }
 
-.content__card-link_current {
-  background-color: #545050;
-}
-
 .content__card-link:hover {
   text-decoration: underline;
 }
@@ -246,8 +242,10 @@ ol {
   outline-offset: 1px;
 }
 
-.content__card-link:active {
+.content__card-link:active,
+.content__card-link_current {
   background: #545050;
+  text-decoration: none;
 }
 
 .content__video-card {
